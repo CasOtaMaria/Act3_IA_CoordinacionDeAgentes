@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using IA26Online.Blackboard;
 namespace IA26Online.Steering.Kynematic.Delegation
 {
     public class KObstacleWallAvoidance : KSeek
@@ -12,6 +12,9 @@ namespace IA26Online.Steering.Kynematic.Delegation
         [SerializeField] private LayerMask obstacle_layer;
 
         private Vector2 last_direction;
+
+        [SerializeField] private BlackboardManager blackboard;
+
         private void Awake()
         {
             agent = GetComponent<Rigidbody2D>();
@@ -51,11 +54,12 @@ namespace IA26Online.Steering.Kynematic.Delegation
             Debug.DrawRay(agent.position, agent.linearVelocity.normalized * raycast_length,
                 raycast_collision ? Color.red : Color.green); //para verlo 
 
+            if (raycast_collision)
+                blackboard.Publish("obstacle", raycast_collision.point);
+
             //3) si no hay colision, no devolver nada
             if (!raycast_collision)
-            {
                 return base.GetSteering();
-            }
 
             //4) Seek.objetivo.posicion = la posicion de la colision + el vector normal de la colision x la distancia_de_evasion
             //los raycast tienen point, no position

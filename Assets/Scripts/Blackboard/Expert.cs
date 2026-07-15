@@ -1,14 +1,17 @@
 using UnityEngine;
-public abstract class Expert : MonoBehaviour
+namespace IA26Online.Blackboard
 {
-    //Los expertos determinan qué acciones ejecutar,
-    //sólo cuando se alcanza el mayor nivel de insistencia en la pizarra
-    //La implementación de un experto requiere una implementación propia que encapsule su lógica
+    public abstract class Expert : MonoBehaviour
+    {
+        //Los expertos determinan qué acciones ejecutar,
+        //sólo cuando se alcanza el mayor nivel de insistencia en la pizarra
+        //La implementación de un experto requiere una implementación propia que encapsule su lógica
 
 
-    //abstract float GetInsistence(Blackboard)
-    public abstract float GetInsistence(Blackboard blackboard);
+        //abstract float GetInsistence(Blackboard)
+        public abstract float GetInsistence(BlackboardManager blackboard);
 
-    //abstract Action[] Run(Blackboard)
-    public abstract void Run(Blackboard blackboard);
+        //abstract Action[] Run(Blackboard)
+        public abstract void Run(BlackboardManager blackboard);
+    }
 }

@@ -45,7 +45,7 @@ namespace IA26Online.Steering.Kynematic.Delegation //namespace explicado en stee
             }
 
             //2) s.Out.lineal = resta de posicion Agente a la posicion Obj
-            sOut.linear = target.position - agent.position;
+            sOut.linear = targetPosition - agent.position;
             //3) se normaliza vector y luego se multiplica por v max
             if (sOut.linear.magnitude > 0.1f)
                 sOut.linear = sOut.linear.normalized * max_speed;
