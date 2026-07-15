@@ -1,16 +1,19 @@
 using System;
 using UnityEngine;
-
-public class SlotAssigment
+namespace IA26Online.Blackboard.Formations
 {
-    //agente: Static
-    public FormationAgent agent;
-    //índice: int
-    public int index;
-
-    public SlotAssigment(FormationAgent agent, int index)
+    public class SlotAssigment
     {
-        this.agent = agent;
-        this.index = index;
+        //agente: Static
+        public FormationAgent agent;
+        //índice: int
+        public int index;
+
+        public SlotAssigment(FormationAgent agent, int index)
+        {
+            this.agent = agent;
+            this.index = index;
+        }
     }
 }
+    
