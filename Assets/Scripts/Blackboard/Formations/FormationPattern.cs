@@ -13,6 +13,8 @@ namespace IA26Online.Blackboard.Formations
 
         //lo voy a simplificar todo al ser 2D
         Vector2 GetSlotOffset(int index, int totalAgents);
+
+        //para entenderme voy a llamar al num de slots totales = totalAgents
         bool SupportsSlots(int totalAgents);
 
     }
