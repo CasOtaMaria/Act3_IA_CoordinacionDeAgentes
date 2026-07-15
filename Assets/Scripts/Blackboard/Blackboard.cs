@@ -81,13 +81,8 @@ public class Blackboard : MonoBehaviour
         return default;
     }
 
-    //Action[] Update()
-    //{
-    //    
-    //    si la insistencia del experto es el mayor valor en la lista de expertos,
-    //    mejor_experto = experto
-    //    
-    //}
+    //el Update es el arbitro, selecciona la acción a ejecutar
+    //en función de la mayor insistencia propuesta por todos los expertos
     private void Update()
     {
         Expert bestExpert = null;

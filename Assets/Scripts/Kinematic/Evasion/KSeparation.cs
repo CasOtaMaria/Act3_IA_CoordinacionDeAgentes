@@ -37,6 +37,7 @@ namespace IA26Online.Steering.Kynematic.Evasion
                 //sOut.lineal += calcular la fuerza_de_repulsión y multiplicarla por la dirección normalizada
                 if (distance < satisfaction_rad)
                 {
+                    distance = Mathf.Max(distance, 0.01f);
                     sOut.linear += Mathf.Min((slow_coef / (distance * distance)), max_aceleration) * direction.normalized;
                 }
             }

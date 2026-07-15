@@ -1,6 +1,4 @@
-using UnityEditor;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 public abstract class Expert : MonoBehaviour
 {
     //Los expertos determinan qué acciones ejecutar,
