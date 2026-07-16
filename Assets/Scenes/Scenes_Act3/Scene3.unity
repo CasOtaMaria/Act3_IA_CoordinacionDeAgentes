@@ -261,6 +261,58 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &183867355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183867357}
+  - component: {fileID: 183867356}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183867356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183867355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5300bbd7590e544bddf5af63834445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IA26Online.Blackboard.Experts.CommonTargetExpert
+  agents:
+  - {fileID: 2110344609}
+  - {fileID: 351485493}
+  - {fileID: 1886141012}
+  - {fileID: 1374924362}
+  - {fileID: 860835970}
+  - {fileID: 1547114911}
+  arrivalDistance: 0.5
+--- !u!4 &183867357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183867355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &351485491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,7 +492,7 @@ MonoBehaviour:
   - {fileID: 1004152853}
   - {fileID: 1959382156}
   - {fileID: 517906106}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!1 &447197569
 GameObject:
@@ -483,21 +535,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 447197569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd40c4acefb37134497dfe79e11e6f5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 66448e79343772547bf27892c4a34fe6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IA26Online.Blackboard.GameManagerScene1
+  m_EditorClassIdentifier: Assembly-CSharp::IA26Online.Blackboard.GameManagerScene2
+  blackboard: {fileID: 701539419}
   formationManager: {fileID: 744513322}
   agents:
   - {fileID: 2110344609}
   - {fileID: 351485493}
-  - {fileID: 1886141012}
   - {fileID: 1374924362}
   - {fileID: 860835970}
+  - {fileID: 1886141012}
   - {fileID: 1547114911}
-  lineSpacing: 2.5
-  vSpacingX: 1.5
-  vSpacingY: 1.5
-  circleRadius: 5
+  sceneCamera: {fileID: 64758584}
+  clickThreshold: 3
 --- !u!50 &517906106 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8207465481373655520, guid: 36e4fc6581a62b94d9ed1d91a6cd3caf, type: 3}
@@ -537,7 +588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fa07fc44d0fff429a8b68e1c0fdbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackboard
-  experts: []
+  experts:
+  - {fileID: 183867356}
 --- !u!4 &701539420
 Transform:
   m_ObjectHideFlags: 0
@@ -582,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c68bd8b5bd0dc4ba8fa4b361ec5946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IA26Online.Blackboard.Formations.FormationManager
-  referencePosition: {x: 0, y: 3}
+  referencePosition: {x: 0, y: 0}
 --- !u!4 &744513323
 Transform:
   m_ObjectHideFlags: 0
@@ -777,7 +829,7 @@ MonoBehaviour:
   - {fileID: 43645100}
   - {fileID: 1004152853}
   - {fileID: 517906106}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!50 &1004152853 stripped
 Rigidbody2D:
@@ -963,7 +1015,7 @@ MonoBehaviour:
   - {fileID: 43645100}
   - {fileID: 1959382156}
   - {fileID: 517906106}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!1001 &1547114909
 PrefabInstance:
@@ -1144,7 +1196,7 @@ MonoBehaviour:
   - {fileID: 43645100}
   - {fileID: 1004152853}
   - {fileID: 1959382156}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!50 &1750633739 stripped
 Rigidbody2D:
@@ -1330,7 +1382,7 @@ MonoBehaviour:
   - {fileID: 1004152853}
   - {fileID: 1959382156}
   - {fileID: 517906106}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!50 &1959382156 stripped
 Rigidbody2D:
@@ -1504,7 +1556,7 @@ MonoBehaviour:
   - {fileID: 1004152853}
   - {fileID: 1959382156}
   - {fileID: 517906106}
-  satisfaction_rad: 2
+  satisfaction_rad: 2.8
   slow_coef: 3
 --- !u!114 &2110344609
 MonoBehaviour:
@@ -1532,3 +1584,4 @@ SceneRoots:
   - {fileID: 447197570}
   - {fileID: 701539420}
   - {fileID: 744513323}
+  - {fileID: 183867357}

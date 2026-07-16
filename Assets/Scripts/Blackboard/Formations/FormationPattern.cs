@@ -23,7 +23,7 @@ namespace IA26Online.Blackboard.Formations
     public class LineFormation : IFormationPattern
     {
         private readonly float spacing;
-        public LineFormation(float spacing = 2f) //por ejemplo 2f, podria hacer una variable y cambiarla
+        public LineFormation(float spacing = 3f) //por ejemplo 2f, podria hacer una variable y cambiarla
         {
             this.spacing = spacing;
         }
