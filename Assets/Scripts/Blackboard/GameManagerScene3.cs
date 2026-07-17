@@ -13,8 +13,14 @@ namespace IA26Online.Blackboard
         [SerializeField] private Vector2 movementDirection = Vector2.right;
         [SerializeField] private float movementSpeed = 1.5f;
 
+        [Header("Scene")]
+        [SerializeField] private Camera sceneCamera;
+
         private void Awake()
         {
+            if (sceneCamera == null)
+                sceneCamera = Camera.main;
+
             for (int i = 0; i < agents.Length; i++)
                 formationManager.AddAgent(agents[i]);
 

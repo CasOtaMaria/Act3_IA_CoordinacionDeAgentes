@@ -58,14 +58,14 @@ namespace IA26Online.Steering.Kynematic.Delegation
                 blackboard.Publish("obstacle", raycast_collision.point);
 
             //3) si no hay colision, no devolver nada
-            if (!raycast_collision)
-                return base.GetSteering();
+            //if (!raycast_collision)
+              //  return base.GetSteering();
 
             //4) Seek.objetivo.posicion = la posicion de la colision + el vector normal de la colision x la distancia_de_evasion
             //los raycast tienen point, no position
 
             //5) return Seek.getSteering()            
-           target.position = raycast_collision.point + raycast_collision.normal *evade_distance;
+           //target.position = raycast_collision.point + raycast_collision.normal *evade_distance;
            return base.GetSteering();
         }
     }

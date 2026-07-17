@@ -33,7 +33,8 @@ namespace IA26Online.Blackboard.Experts
                 if (direction == Vector2.zero)
                     direction = Vector2.right;
 
-                Vector2 escapePosition = agents[i].GetPosition() + direction.normalized * escapeDistance;
+                //Vector2 escapePosition = agents[i].GetPosition() + direction.normalized * escapeDistance;
+                Vector2 escapePosition = obstacle + direction.normalized * escapeDistance;
                 agents[i].SetFormationTarget(escapePosition);
             }
 
